@@ -154,7 +154,7 @@ class ClientDaemon(SDaemon):
                 self.flag=(self.flag+1)%2
             except:
                 sys.stderr.write("There may be some errors in storage. Please check!! ")
-            time.sleep(1800)
+            time.sleep(7200)
             #sys.stderr.write("There may be some errors in storage. Please check!! ")
 
 
