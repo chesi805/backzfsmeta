@@ -16,12 +16,12 @@ def backup_label(flag,pool_name):
     for line in lines:
         if "JBOD" in line:
             line2 = line.split()[0]
-            ret, output = commands.getstatusoutput("dd if=/dev/mapper/%s bs=256k count=1 of=/root/%s_%s_label_%d" % (line2, pool_name, line2.split("_")[-1],flag))
+            ret, output = commands.getstatusoutput("dd if=/dev/mapper/%s bs=256k count=1 of=//var/lib/backzfsmeta/backmeta/%s_%s_label_%d" % (line2, pool_name, line2.split("_")[-1],flag))
             #name="/root/%s_%s_label%d"%(pool_name, line2.split("_")[-1],flag)
             #logging.debug(name)
         elif "dm" in line:
             line2 = line.split()[0]
-            ret, output = commands.getstatusoutput("dd if=/dev/%s bs=256k count=1 of=/root/%s_%s_label_%d" % (line2, pool_name, line2,flag))
+            ret, output = commands.getstatusoutput("dd if=/dev/%s bs=256k count=1 of=/var/lib/backzfsmeta/backmeta/%s_%s_label_%d" % (line2, pool_name, line2,flag))
         else:
             continue
 
